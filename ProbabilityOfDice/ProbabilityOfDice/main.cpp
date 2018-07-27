@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main(void) {
 	int nInput, mInput;
 
 	cin >> nInput >> mInput;
@@ -11,4 +11,6 @@ int main() {
 			cout << i << ' ' << j << endl;
 		}
 	}
+
+	return 0;
 }
