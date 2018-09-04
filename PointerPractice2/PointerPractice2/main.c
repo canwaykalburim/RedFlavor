@@ -40,6 +40,5 @@ int main(void) {
 	//PointerSize();
 	//PointerCalculate();
 	//PointerCalculate2();
-
 	return 0;
 }
