@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// BaekJoon 6064번 문제
+// BaekJoon 6064번 문제 C++ 버전
 
 int Least(int m, int n) {
 	int a = m, b = n, tmp;
@@ -18,7 +18,7 @@ int main(void) {
 	cin >> tmp;
 
 	for (int i = 0; i < tmp; i++) {
-		cin >> m; cin >> n; cin >> x; cin >> y;
+		cin >> m >> n >> x >> y;
 		int LNum = Least(m, n);
 		while (x != y && x <= LNum) {
 			if (x < y) x += m;
