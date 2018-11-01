@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//BAEKJOON 2577¹ø ¹®Á¦
 int main(void)
 {
 	int nInput, tmp[10] = { 0 };
