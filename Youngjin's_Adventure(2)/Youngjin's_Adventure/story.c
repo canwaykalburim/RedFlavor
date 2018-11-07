@@ -16,7 +16,6 @@ void Menu();
 void Start();
 void Option();
 void Explanation();
-void End();
 void developer();
 
 void K_menu();
@@ -106,7 +105,7 @@ void Menu() {
 	}
 	else if (strcmp(nInput, "6") == 0) {
 		system("cls");
-		End();
+		return 0;
 	}
 }
 
@@ -151,7 +150,7 @@ void Explanation() {
 }
 
 void Option() {
-	printf("     404\n\n  Unable to set.\n\n");
+	printf("     error\n\n  Unable to set.\n\n");
 
 	printf("  If you want to go back, enter \"1\".\n\n");
 	printf(" ⇒ ");
@@ -186,10 +185,6 @@ void developer() {
 		_getch();
 		developer();
 	}
-}
-
-void End() {
-	exit(0);
 }
 
 void Choices() {
@@ -246,12 +241,12 @@ void Choices() {
 void K_menu() {
 	printf("  ★영진이의 모험★\n\n");
 
-	printf(" 1. 시작\n");
-	printf(" 2. 설명\n");
-	printf(" 3. 설정\n");
-	printf(" 4. 제작자\n");
-	printf(" 5. 언어 선택\n");
-	printf(" 6. 끝내기\n\n");
+	printf("  1. 시작\n");
+	printf("  2. 설명\n");
+	printf("  3. 설정\n");
+	printf("  4. 제작자\n");
+	printf("  5. 언어 선택\n");
+	printf("  6. 끝내기\n\n");
 
 	printf(" ⇒ ");
 	scanf("%s", nInput);
@@ -279,7 +274,7 @@ void K_menu() {
 	else if (strcmp(nInput, "6") == 0) {
 		system("cls");
 		_getch();
-		End();
+		return 0;
 	}
 	else {
 		printf("  올바른 수를 입력해 주세요.\n\n");
@@ -295,12 +290,12 @@ void K_start() {
 	messagePrint("NULL", NULL, "그리고 식빵은 떨어졌다.\n");
 	messagePrint("NULL", NULL, "하지만 많은 러브 코미디에서 그렇듯 누구도 떨어진 식빵은 아까워 하지 않았다.\n");
 	messagePrint("???", 12, "아야야.....\n");
-	messagePrint("영진", 12, "아!죄송합니다!\n");
+	messagePrint("영진", 12, "아! 죄송합니다!\n");
 	messagePrint("영진", 12, "어? 너는?\n");
 	messagePrint("NULL", NULL, "그곳에 서 있던 것은 같은 반 친구 심영래(♂).\n");
 	messagePrint("NULL", NULL, "그렇다. 그에게 러브 코미디란 만화속 이야기이다.\n");
 	messagePrint("심영래", 12, "아오 이런 싹바가지 없는 새끼.\n");
-	messagePrint("NULL", NULL, "그에 입에서 나온 말은 아까전 \"아야야...\"라고 했던 사람이라고 생각할 수 없는 말이었다.\n");
+	messagePrint("NULL", NULL, "그의 입에서 나온 말은 아까전 \"아야야...\"라고 했던 사람이라고 생각할 수 없는 말이었다.\n");
 	messagePrint("NULL", NULL, "무슨 말을 할까?\n\n", 10);
 
 	K_choices();
@@ -328,7 +323,7 @@ void K_explanation() {
 }
 
 void K_option() {
-	printf("        404\n\n  설정할 수 없습니다.\n\n");
+	printf("        error\n\n  설정할 수 없습니다.\n\n");
 
 	printf("  뒤로 가고 싶으면 \"1\"을 입력하세요.\n\n");
 	printf(" ⇒ ");
