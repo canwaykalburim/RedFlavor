@@ -239,6 +239,7 @@ void Choices() {
 }
 
 void K_menu() {
+	int Num;
 	printf("  ★영진이의 모험★\n\n");
 
 	printf("  1. 시작\n");
@@ -249,36 +250,31 @@ void K_menu() {
 	printf("  6. 끝내기\n\n");
 
 	printf(" ⇒ ");
-	scanf("%s", nInput);
+	scanf("%d", &Num);
 
-	if (strcmp(nInput, "1") == 0) {
+	switch (Num) {
+	case 1:
 		system("cls");
-		K_start();
-	}
-	else if (strcmp(nInput, "2") == 0) {
+		K_start();	break;
+	case 2:
 		system("cls");
-		K_explanation();
-	}
-	else if (strcmp(nInput, "3") == 0) {
+		K_explanation();	break;
+	case 3:
 		system("cls");
-		K_option();
-	}
-	else if (strcmp(nInput, "4") == 0) {
+		K_option();	break;
+	case 4:
 		system("cls");
-		K_developer();
-	}
-	else if (strcmp(nInput, "5") == 0) {
+		K_developer();	break;
+	case 5:
 		system("cls");
-		Mode();
-	}
-	else if (strcmp(nInput, "6") == 0) {
+		Mode();	break;
+	case 6:
 		system("cls");
 		_getch();
 		return 0;
-	}
-	else {
+	default:
 		printf("  올바른 수를 입력해 주세요.\n\n");
-		K_menu();
+		K_menu();	break;
 	}
 }
 
