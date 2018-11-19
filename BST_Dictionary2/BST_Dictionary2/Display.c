@@ -16,6 +16,10 @@ void Menu() {
 
 void Input()
 {
+	Element nd;
+	BTreeNode* root = NULL;
+	BTreeNode* FNode = NULL;
+
 	int num;
 
 	system("cls");
@@ -25,13 +29,34 @@ void Input()
 	switch (num) 
 	{
 	case 1:
-		InputNode();
+		printf("\t 나라 : ");
+		gets(nd.Country);
+		printf("\t 수도 : ");
+		gets(nd.Capital);
+		InputNode(&root, nd);
+		break;
 	case 2:
-		SearchNode();
+		printf("사전을 탐색합니다.");
+		printf("나라 : ");
+		gets(nd.Country);
+		FNode = SearchNode(root, nd);
+		if (FNode != NULL) {
+			printf("\n\t [%s 검색완료]\n", FNode->data.Country);
+			printf("\t 나라 : %s\n", FNode->data.Country);
+			printf("\t 수도 : %s\n", FNode->data.Capital);
+		}
+		else printf("\n\t 나라를 찾지 못했습니다. \n");
+		break;
 	case 3:
-		PrintNode();
+		printf("나라를 출력합니다.\n");
+		PrintNode(root);
+		printf("\n\n");
+		break;
 	case 4:
-		DeleteNode();
+		printf("삭제할 나라 : ");
+		gets(nd.Country);
+		DeleteNode(&root, nd);
+		break;
 	case 5:
 		exit(1);
 		break;

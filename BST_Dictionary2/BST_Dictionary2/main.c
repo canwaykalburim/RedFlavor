@@ -2,6 +2,8 @@
 
 int main(void)
 {
-	Input();
+	while (1) {
+		Input();
+	}
 	return 0;
 }

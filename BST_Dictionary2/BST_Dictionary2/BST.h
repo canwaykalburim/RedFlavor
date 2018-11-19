@@ -1,7 +1,7 @@
 #ifndef __BST_H__
 #define __BST_H__
 
-#define SIZE 100
+#define BST_SIZE 100
 
 #include <stdio.h>
 #include <string.h>
@@ -10,9 +10,11 @@
 #include <ctype.h> 
 #include <Windows.h>
 
+#include "BT.h"
+
 typedef struct {
-	char Country[SIZE];
-	char Capital[SIZE];
+	char Country[BST_SIZE];
+	char Capital[BST_SIZE];
 } Element;
 
 typedef struct TreeNode {
