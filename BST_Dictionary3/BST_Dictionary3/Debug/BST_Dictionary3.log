@@ -1,0 +1,4 @@
+﻿  BST.c
+c:\users\dsm2018\desktop\소스 코드\redflavor\bst_dictionary3\bst_dictionary3\bst.c(134): warning C4047: '==': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\dsm2018\desktop\소스 코드\redflavor\bst_dictionary3\bst_dictionary3\bst.c(157): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  BST_Dictionary3.vcxproj -> C:\Users\DSM2018\Desktop\소스 코드\RedFlavor\BST_Dictionary3\Debug\BST_Dictionary3.exe
