@@ -132,6 +132,9 @@ void Display(BSTreeNode* root)
 		printf(" %s : %s\n\n", root->data.Country, root->data.Capital);
 		Display(root->right);
 	}
+	else
+		printf("\n 출력할 데이터가 없습니다!");
+	_getch();
 }
 
 int main(void)
