@@ -20,18 +20,20 @@ void InputNode(BSTreeNode **root, Element x) {
 	BSTreeNode *qNode = NULL;
 	BSTreeNode *pNode = *root;
 
+
 	while (pNode != NULL) {
 		if (strcmp(x.Country, pNode->data.Country) == 0) {
-			printf("\n 이미 같은 데이터가 있습니다! \n");
+			printf("\n Oh! It already have the same data! \n");
+			_getch();
 			return;
 		}
 		qNode = pNode;
 		if (strcmp(x.Country, pNode->data.Country) < 0) {
-			printf(" 왼쪽 이동\n");
+			printf(" Move left...\n\n");
 			pNode = pNode->left;
 		}
 		else if (strcmp(x.Country, pNode->data.Country) > 0) {
-			printf(" 오른쪽 이동\n");
+			printf(" Move right...\n\n");
 			pNode = pNode->right;
 		}
 	}
@@ -42,11 +44,11 @@ void InputNode(BSTreeNode **root, Element x) {
 
 	if (qNode != NULL) {
 		if (strcmp(x.Country, qNode->data.Country) < 0) {
-			printf(" 왼쪽에 저장\n");
+			printf(" Save in left\n");
 			qNode->left = nNode;
 		}
 		else if (strcmp(x.Country, qNode->data.Country) > 0) {
-			printf(" 오른쪽에 저장\n");
+			printf(" Save in right\n");
 			qNode->right = nNode;
 		}
 	}
@@ -71,9 +73,8 @@ void DeleteNode(BSTreeNode **root, Element x)
 			pNode = pNode->right;
 		}
 	}
-
 	if (pNode == NULL) {
-		printf("\n찾는 데이터가 이진 트리에 없습니다!\n");
+		printf("\n The data you are looking for is not in the binary tree!\n");
 		_getch();
 		return;
 	}
@@ -119,7 +120,7 @@ BSTreeNode* SearchNode(BSTreeNode* root, Element x)
 		else if (strcmp(x.Country, root->data.Country) < 0) root = root->left;
 		else if (strcmp(x.Country, root->data.Country) > 0) root = root->right;
 	}
-	printf("\n찾는 데이터가 없습니다!");
+	printf("\n No data found!");
 	_getch();
 	_getch();
 	return root;
@@ -129,12 +130,10 @@ void Display(BSTreeNode* root)
 {
 	if (root != NULL) {
 		Display(root->left);
-		printf(" %s : %s\n\n", root->data.Country, root->data.Capital);
+		printf(" [나라] : %s\n [수도] : %s\n", root->data.Country, root->data.Capital);
+		printf("\n------------------------\n");
 		Display(root->right);
 	}
-	else
-		printf("\n 출력할 데이터가 없습니다!");
-	_getch();
 }
 
 int main(void)
@@ -144,36 +143,45 @@ int main(void)
 	BSTreeNode* FNode = NULL;
 	char Choice;
 
+	Element SaveData[5] = {
+		{"남조선", "서울"}, {"중국", "베이징"},
+	{"북조선", "평양"}, {"미국", "워싱텅"}, {"일본", "도쿄"}
+	};
+
+	for (int i = 0; i < 5; i++)
+		InputNode(&root, SaveData[i]);
+
 	while (1) {
 		system("cls");
 		Menu();
 		Choice = getchar();
 		getchar();
 
+
 		switch (Choice) {
 		case '1':
 			system("cls");
-			printf("\n\n 나라 : ");
+			printf("\n\n [나라] : ");
 			gets(EL.Country);
-			printf("\n\n 수도 : ");
+			printf("\n\n [수도] : ");
 			gets(EL.Capital);
 			InputNode(&root, EL);
 			break;
 		case '2':
 			system("cls");
 			printf("사전을 탐색합니다");
-			printf("\n\n나라 : ");
+			printf("\n\n[나라] : ");
 			gets(EL.Country);
 			FNode = SearchNode(root, EL);
 			if (FNode != NULL) {
 				system("cls");
 				printf("\n [%s 검색완료]\n\n", FNode->data.Country);
-				printf(" 나라 : %s\n", FNode->data.Country);
-				printf(" 수도 : %s\n", FNode->data.Capital);
+				printf(" [나라] : %s\n", FNode->data.Country);
+				printf(" [수도] : %s\n", FNode->data.Capital);
 				_getch();
 				_getch();
 			}
-			else 
+			else
 				printf("\n\t 문자를 찾지 못했습니다. \n");
 			break;
 		case '3':
