@@ -1,6 +1,6 @@
 #include "common.h"
 
-#define CARD_NUMBER 12
+#define CARD_NUMBER 13
 
 void menuInput();
 
@@ -11,7 +11,21 @@ void gameSave()
 
 void startGame()
 {
+	printf("게임을 시작하겠습니다");
+	_getch();
 
+	srand((unsigned)time(NULL));
+
+	int nCard[CARD_NUMBER] = { 0 };
+
+	while (1)
+	{
+		int dealer = rand() % 14;
+		int player = rand() % 14;
+
+		printf("딜러의 패: %c");
+		printf("당신의 패: ");
+	}
 }
 
 void gameExplain()
