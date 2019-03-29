@@ -2,7 +2,7 @@
 
 void showScreen()
 {
-	printf("-------메뉴-------- \n");
+	printf("\n-------메뉴-------- \n");
 	printf("  1. 게임 시작 \n");
 	printf("  2. 게임 설명 \n");
 	printf("  3. 게임 규칙 \n");
